@@ -47,5 +47,19 @@ class W3CSS {
     $html .= $this->package->load->view("table_footer", null, $return);
     return $html;
   }
+  /**
+   * [renderProgressBar description]
+   * @return [type] [description]
+   */
+  function renderProgressBar($value=0, $centered=true, $color="w3-green", $bar_class=null) {
+    $data = array(
+      "value"     => $value,
+      "color"     => $color,
+      "bar_class" => $bar_class,
+      "centered"  => $centered
+    );
+    if ($bar_class != null) $data["bar_class"] = $bar_class;
+    return $this->package->load->view("progress_bar", $data);
+  }
 }
 ?>

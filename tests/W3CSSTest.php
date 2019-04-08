@@ -14,6 +14,7 @@ class W3CSSTest {
       array(4, "Paystack", "For Payment Integration")
     );
     $ci->w3css->renderTable($columns, $rows);
+    $ci->w3css->renderProgressBar(90);
   }
 }
 ?>
