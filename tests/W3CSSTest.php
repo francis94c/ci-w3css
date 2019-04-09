@@ -11,10 +11,10 @@ class W3CSSTest {
       array(1, "Broom", "For Seeeping"),
       array(2, "Data", "For Browsing"),
       array(3, "Git", "For version Control"),
-      array(4, "Paystack", "For Payment Integration")
+      array(4, "Food", "What we eat")
     );
     $ci->w3css->renderTable($columns, $rows);
-    $ci->w3css->renderProgressBar(90);
+    $ci->w3css->renderProgressBar(30, "w3-brown");
   }
 }
 ?>

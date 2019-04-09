@@ -1,0 +1,16 @@
+{
+  "name": "francis94c/w3css",
+  "type": "library",
+  "description": "A PHP library for rendering complex and dynamic HTML, styled with the W3CSS library.",
+  "tags": ["w3css", "ui", "css"],
+  "page": "https://github.com/francis94c/w3css",
+  "authors": [
+    {
+      "name": "Francis Ilechukwu",
+      "email": "francis94c@gmail.com",
+      "page": "about.me/francisilechukwu",
+      "role": "Developer"
+    }
+  ],
+  "php": ">=5.3.0"
+}
