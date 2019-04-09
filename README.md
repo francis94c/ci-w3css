@@ -1,4 +1,4 @@
-![Licence MIT](https://img.shields.io/github/license/francis94c/w3css.svg) ![Splint](https://img.shields.io/badge/splint--ci-francis94c%2Fw3css-orange.svg)![Lates Tag](https://img.shields.io/github/tag-date/francis94c/w3css.svg) ![Commits](https://img.shields.io/github/last-commit/francis94c/w3css.svg)
+![Licence MIT](https://img.shields.io/github/license/francis94c/w3css.svg) ![Splint](https://img.shields.io/badge/splint--ci-francis94c%2Fw3css-orange.svg) ![Lates Tag](https://img.shields.io/github/tag-date/francis94c/w3css.svg) ![Commits](https://img.shields.io/github/last-commit/francis94c/w3css.svg)
 
 # w3css #
 
