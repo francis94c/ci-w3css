@@ -9,6 +9,10 @@ class W3CSS {
 
   const PACKAGE = "francis94c/w3css";
 
+  const MENU_BAR_HORIZONTAL = "horizontal";
+
+  const MENU_BAR_VERTICAL = "vertical";
+
   function __construct() {
     $this->ci =& get_instance();
     $this->package = $this->ci->load->splint(self::PACKAGE);
@@ -19,6 +23,13 @@ class W3CSS {
    */
   function stylesheet() {
     return "<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\" />";
+  }
+  /**
+   * [fontsawesome description]
+   * @return [type] [description]
+   */
+  function fontsawesome() {
+    return "<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.3.1/css/all.css\" integrity=\"sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU\" crossorigin=\"anonymous\">";
   }
   /**
    * [renderTable description]
@@ -47,6 +58,14 @@ class W3CSS {
     $html .= $this->package->load->view("table_footer", null, $return);
     return $html;
   }
+  /**
+   * [renderProgressBar description]
+   * @param  integer $value     [description]
+   * @param  string  $color     [description]
+   * @param  boolean $centered  [description]
+   * @param  [type]  $bar_class [description]
+   * @return [type]             [description]
+   */
   function renderProgressBar($value=0, $color="w3-green", $centered=true, $bar_class=null) {
     $data = array(
       "value"     => $value,
@@ -56,6 +75,25 @@ class W3CSS {
     );
     if ($bar_class != null) $data["bar_class"] = $bar_class;
     return $this->package->load->view("progress_bar", $data);
+  }
+  /**
+   * [renderMenuBar description]
+   * @param  [type] $menus      [description]
+   * @param  [type] $type       [description]
+   * @param  string $class      [description]
+   * @param  string $item_class [description]
+   * @return [type]             [description]
+   */
+  function renderMenuBar($menus, $type=self::MENU_BAR_HORIZONTAL, $class="w3-teal", $item_class="w3-hover-blue") {
+    $this->package->load->view("bar_header", array(
+      "class" => $class,
+      "type"  => $type
+    ));
+    $this->package->load->view("bar_items", array(
+      "menus"      => $menus,
+      "item_class" => $item_class
+    ));
+    $this->package->load->view("bar_footer");
   }
 }
 ?>

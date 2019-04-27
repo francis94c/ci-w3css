@@ -15,6 +15,25 @@ class W3CSSTest {
     );
     $ci->w3css->renderTable($columns, $rows);
     $ci->w3css->renderProgressBar(30, "w3-brown");
+    echo $ci->w3css->fontsawesome();
+    $menus = array(
+      array(
+        "text"  => "Open",
+        "icon"  => "fa-external-link-alt",
+        "link"  => "localhost"
+      ),
+      array(
+        "text" => "Save",
+        "icon" => "fa-save"
+      ),
+      array(
+        "text" => "Close",
+        "icon" => "fa-times",
+        "link" => "localhost"
+      )
+    );
+    $ci->w3css->renderMenuBar($menus);
+    $ci->w3css->renderMenuBar($menus, W3CSS::MENU_BAR_VERTICAL);
   }
 }
 ?>
