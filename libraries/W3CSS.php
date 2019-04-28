@@ -7,22 +7,30 @@ class W3CSS {
 
   private $package;
 
+  /**
+   * [private See https://www.w3schools.com/w3css/w3css_color_themes.asp]
+   * @var string
+   */
+  private $theme = "w3-theme-teal";
+
   const PACKAGE = "francis94c/w3css";
 
   const MENU_BAR_HORIZONTAL = "horizontal";
 
   const MENU_BAR_VERTICAL = "vertical";
 
-  function __construct() {
+  function __construct($params=null) {
     $this->ci =& get_instance();
     $this->package = $this->ci->load->splint(self::PACKAGE);
+    if ($params != null && isset($params["theme"])) $this->theme = $params["theme"];
   }
   /**
    * [stylesheet description]
    * @return [type] [description]
    */
   function stylesheet() {
-    return "<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\" />";
+    $cdn = "<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\" />";
+    return $cdn . PHP_EOL . "<link rel=\"stylesheet\" href=\"https://www.w3schools.com/lib/$this->theme.css\" />";
   }
   /**
    * [fontsawesome description]
@@ -41,7 +49,7 @@ class W3CSS {
    * @param  boolean $return       [description]
    * @return [type]                [description]
    */
-  function renderTable($columns, $rows, $header_class="w3-teal", $striped=true, $bordered=false, $table_class=null, $return=false) {
+  function renderTable($columns, $rows, $header_class="w3-theme", $striped=true, $bordered=false, $table_class=null, $return=false) {
     $html = "";
     $html = $this->package->load->view("table_header", array(
       "class"       => $header_class,
@@ -84,7 +92,7 @@ class W3CSS {
    * @param  string $item_class [description]
    * @return [type]             [description]
    */
-  function renderMenuBar($menus, $type=self::MENU_BAR_HORIZONTAL, $class="w3-teal", $item_class="w3-hover-blue") {
+  function renderMenuBar($menus, $type=self::MENU_BAR_HORIZONTAL, $class="w3-theme", $item_class="w3-hover-blue") {
     $this->package->load->view("bar_header", array(
       "class" => $class,
       "type"  => $type
