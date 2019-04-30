@@ -4,7 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class W3CSSTest {
 
   function testTable(&$ci) {
-    $ci->load->splint("francis94c/w3css", "+W3CSS", null, "w3css");
+    //$ci->load->splint("francis94c/w3css", "+W3CSS", null, "w3css");
+    $ci->unit->run($ci->load->package("francis94c/w3css"), true, "Auto Load Library.");
     echo $ci->w3css->stylesheet();
     $columns = array("S/N", "Item", "Description");
     $rows = array(
